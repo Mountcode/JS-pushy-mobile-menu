@@ -1,0 +1,139 @@
+@BC1: #efefef; 
+
+body{
+    background: darken(@BC1,70%);
+    font-family: arial;
+}
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+*{
+    box-sizing: border-box;
+}
+
+ul{
+    list-style:none;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background: lighten(@BC1,5%);
+    border: 1px solid #ddd;
+    padding-left: 0px;
+    margin-top: 0px;
+    background: rgb(247,247,247);
+    background: -moz-linear-gradient(top, rgba(247,247,247,1) 60%, rgba(237,237,237,1) 99%);
+    background: -webkit-linear-gradient(top, rgba(247,247,247,1) 60%,rgba(237,237,237,1) 99%);
+    background: linear-gradient(to bottom, rgba(247,247,247,1) 60%,rgba(237,237,237,1) 99%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#ededed',GradientType=0 );
+    li{
+        font-weight: 600;
+        position: relative;
+        a{
+            text-decoration: none;
+            font-size: 18px;
+            color: #444;
+            transition: 0.3s;
+            padding: 15px 20px;
+            display: block;
+            white-space: nowrap;
+            &:hover{
+                opacity: 0.6;
+            }
+        }
+        ul{
+            width: inherit;
+            position: absolute;
+            display: none;
+            background: darken(@BC1,40%);
+            min-width: 100%;
+            border: 1px solid @BC1;
+            li{
+                a{
+                    color: #f7f7f7;
+                    padding: 8px 20px;
+                    font-weight: 100;
+                    font-size: 16px;
+                    border-bottom: 1px solid darken(@BC1,35%);
+                }
+            }
+        }
+        &:hover{
+            ul{
+                display: block;  
+            }
+        }
+    }
+}
+
+//PMenu required style
+.mobile_menu_button{
+    color: #fff;
+    padding: 15px;
+    margin: 0 auto;
+    font-size: 18px;
+    text-align: center;
+    background: darken(@BC1,20%);
+    width: 200px;
+}
+.PMenu{
+    &.mobile_it{
+        position: fixed;
+        left: -100%;
+        top: 0;
+        display: inherit;
+        width: inherit;
+        transition:0.3s;
+        height: 100%;
+    }
+    &.show_it{
+        left: 0px;
+    }
+    li{
+        &.closer{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            height: 30px;
+            width: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            background: darken(@BC1,35%);
+            z-index: 20;
+        }
+       
+        a{
+            border-bottom: 1px solid darken(@BC1,2%);
+        }
+        ul{
+            position: relative;
+            transition:0.3s;
+            &.open_it{
+                display: block;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
